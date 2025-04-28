@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= shopData.shopName %> | Home</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+</head>
+<body>
+  <div class="shopName">
+    <h1><%= shopData.shopName %></h1>
+  </div>
+
+  <div class="navbar">
+    <div class="nav-link">
+      <a href="/">Home</a>
+    </div>
+    <form class="search-form" action="/cars/search_result" method="get">
+      <div class="search-wrap">
+        <input type="text" name="search_text" placeholder=" ">
+        <input type="image" src="/searchIcon.png" alt=" ">
+      </div>
+    </form>
+  </div>
+
+  <div class="middle-content">
+    <div class="icon-container">
+      <div class="icon-item">
+        <a href="/users/hosts">
+          <img src="addCarListing.png" alt="Car Listing Page">
+        </a>
+        <p>Car Listing</p>
+      </div>
+      <div class="icon-item">
+        <a href="/users/users">
+          <img src="users.png" alt="Customers Page">
+        </a>
+        <p>Users</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Drive Premium, Drive DRentals4U - Where Every Mile is a Statement...</p>
+  </footer>
+</body>
+</html>

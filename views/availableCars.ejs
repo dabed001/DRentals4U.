@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= shopData.shopName %>  |  Available Cars</title>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+</head>
+<body>
+  <div class="shopName">
+    <h1><%= shopData.shopName %></h1>
+  </div>
+
+    <div class="navbar">
+    <div class="nav-link">
+      <a href="/">Home</a>
+    </div>
+    <form class="search-form" action="/cars/search_result" method="get">
+      <div class="search-wrap">
+        <input type="text" name="search_text" placeholder=" ">
+        <input type="image" src="/searchIcon.png" alt=" ">
+      </div>
+    </form>
+  </div>
+
+  <div class="middle-content">
+    <p class="cars-page-title">The vehicles that are available are...</p>
+    <ul class="cars-list">
+      <% availableCars.forEach(function(car) { %>
+        <li class="cars-item">
+          <span><%= car.name %> - £<%= car.price %></span>
+          <form action="/booking" method="POST" class="book-form">
+            <input type="hidden" name="carNo" value="<%= car.no %>">
+            <button type="submit" class="book-button">Book Now</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+
+</body>
+<footer>
+  <p>Drive Premium, Drive DRentals4U - Where Every Mile is a Statement...</p>
+</footer>
+</html>
