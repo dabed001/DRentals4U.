@@ -338,6 +338,7 @@ input[type="image"] {
   align-self: center; 
   color: white;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .cars-list {
@@ -349,11 +350,12 @@ input[type="image"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
-  width: 400px;
+  font-weight: bold;
+  width: auto;
   color: white;
 }
 
@@ -363,7 +365,7 @@ input[type="image"] {
 
 .book-button {
   padding: 5px 15px;
-  background-color: cadetblue;
+  background-color:  rgb(124, 152, 152);
   color: white;
   border: none;
   border-radius: 5px;
@@ -373,6 +375,42 @@ input[type="image"] {
 .book-button:hover {
   background-color: #5f9ea0;
 }
+
+.booking-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.availability {
+  padding: 5px 15px;
+  background-color: rgb(124, 152, 152);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.availability:hover {
+  background-color: #5f9ea0;
+}
+
+.calendar-check {
+  display: none;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.unavailable {
+  font-size: 12px;
+  color: red;
+}
+
 
 footer {
   background-color: rgb(45, 54, 54);

@@ -22,20 +22,39 @@
   </div>
 
   <div class="middle-content">
-    <p class="cars-page-title">The vehicles that are available are...</p>
+    <p class="cars-page-title">Browse Our Available Fleet...</p>
     <ul class="cars-list">
       <% availableCars.forEach(function(car) { %>
         <li class="cars-item">
           <span><%= car.name %> - £<%= car.price %></span>
+
+        <div class="booking-buttons">
           <form action="/booking" method="POST" class="book-form">
             <input type="hidden" name="carNo" value="<%= car.no %>">
             <button type="submit" class="book-button">Book Now</button>
           </form>
-        </li>
+        <button class="availability " onclick="toggleCalendar('<%= car.no %>')">Check Availability</button>
+        
+          
+        <div class="calendar-check" id="calendar-<%= car.no %>">
+          <p>Choose a Date:</p>
+          <input type="date" min="2025-01-01" />
+          <p class="unavailable">Unavailable: ...</p>
+        </div>
+      </div>
+      
+      </li>
       <% }) %>
     </ul>
   </div>
 
+  <script>
+    function toggleCalendar(carNo) {
+      const c = document.getElementById('calendar-' + carNo);
+      c.style.display = c.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+  
 </body>
 <footer>
   <p>Drive Premium, Drive DRentals4U - Where Every Mile is a Statement...</p>

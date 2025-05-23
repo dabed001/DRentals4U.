@@ -44,7 +44,7 @@ router.post('/carListed', function (req, res, next) {
 
 router.post('/booking', function (req, res, next) {
     const carNo = req.body.carNo;
-    res.send('Proceeding to booking for Car: ' + carNo);
+    res.send('Proceeding to Book for Car: ' + carNo);
 });
 
 // Export the router object so index.js can access it
